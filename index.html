@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Tanvi ❤️</title>
 
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#ff4e8a,#ff8fab);
+text-align:center;
+color:white;
+overflow-x:hidden;
+}
+
+h1{
+font-size:55px;
+margin-top:30px;
+}
+
+p{
+width:85%;
+margin:auto;
+font-size:20px;
+margin-top:30px;
+line-height:1.6;
+}
+
+button{
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:30px;
+margin:10px;
+cursor:pointer;
+}
+
+.yes{
+background:#00ff88;
+color:black;
+}
+
+.no{
+background:#ff4444;
+color:white;
+position:relative;
+}
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:22px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);opacity:1;}
+100%{transform:translateY(-120vh);opacity:0;}
+}
+
+.big{
+font-size:65px;
+margin-top:35vh;
+}
+
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9a6e0c.mp3?filename=romantic-love-ambient-11095.mp3" type="audio/mpeg">
+</audio>
+
+<div id="main">
+
+<h1>I LOVE YOU TANVI ❤️</h1>
+
+<p>
+<b>
+Tanvi, shayad tumhe yaad ho ya na ho, par mere liye sab kuch us din se special ho gaya tha jab main tumse pehli baar Rustampur ke us coaching institute me mila tha jaha Sonu sir padhaate the, saal 2024 me. Us din mujhe bilkul bhi idea nahi tha ki ek simple si class meri life ki sabse beautiful memory ban jayegi. Jab bhi tum class me aati thi na, pata nahi kyun pura din automatically better lagne lagta tha. Tumhari smile, tumhari baatein aur tumhara simple sa attitude mujhe andar se itna khush kar deta tha ki main explain bhi nahi kar sakta. Shayad ye sab feelings main kabhi properly bol nahi paaya, par sach ye hai ki tum meri life ki sabse special person ban chuki ho. Aaj bas dil se ek hi baat kehna chahta hu… I truly love you Tanvi.
+</b>
+</p>
+
+<h2>Will you marry me Tanvi? 💍</h2>
+
+<button class="yes" onclick="yes()">Yes ❤️</button>
+<button class="no" onmouseover="move()">No 😅</button>
+
+</div>
+
+<script>
+
+function move(){
+let btn=document.querySelector(".no");
+btn.style.position="absolute";
+btn.style.left=Math.random()*80+"%";
+btn.style.top=Math.random()*80+"%";
+}
+
+function yes(){
+
+document.body.innerHTML="<h1 class='big'>THANK YOU TANVI ❤️</h1>";
+
+}
+
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"%";
+heart.style.fontSize=(20+Math.random()*20)+"px";
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),6000);
+
+},300);
+
+</script>
+
+</body>
+</html>
