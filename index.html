@@ -2,20 +2,27 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>For Tanvi ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Orbitron&display=swap" rel="stylesheet">
 
 <style>
 
 body{
 margin:0;
-font-family:Arial;
 text-align:center;
+font-family:'Pacifico',cursive;
 color:white;
 overflow:hidden;
-background:radial-gradient(circle,#0f2027,#203a43,#2c5364);
+transition:background 2s;
 }
 
-h1{font-size:55px;margin-top:30px;}
+h1{
+font-size:60px;
+margin-top:30px;
+font-family:'Orbitron',sans-serif;
+}
 
 p{
 width:85%;
@@ -26,11 +33,11 @@ line-height:1.6;
 }
 
 button{
-padding:12px 25px;
-font-size:18px;
+padding:14px 28px;
+font-size:20px;
 border:none;
 border-radius:30px;
-margin:10px;
+margin:12px;
 cursor:pointer;
 }
 
@@ -46,29 +53,6 @@ animation:ring 2s infinite;
 0%{transform:rotate(-10deg);}
 50%{transform:rotate(10deg);}
 100%{transform:rotate(-10deg);}
-}
-
-.star{
-position:fixed;
-color:white;
-font-size:14px;
-animation:twinkle 2s infinite alternate;
-}
-
-@keyframes twinkle{
-from{opacity:0.3;}
-to{opacity:1;}
-}
-
-.shoot{
-position:fixed;
-font-size:18px;
-animation:shoot 2s linear forwards;
-}
-
-@keyframes shoot{
-0%{transform:translate(0,0);}
-100%{transform:translate(400px,400px);opacity:0;}
 }
 
 .heart{
@@ -94,6 +78,28 @@ animation:rose 7s linear infinite;
 100%{transform:translateY(110vh) rotate(360deg);}
 }
 
+.star{
+position:fixed;
+font-size:16px;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:0.3;}
+to{opacity:1;}
+}
+
+.shoot{
+position:fixed;
+font-size:20px;
+animation:shoot 2s linear forwards;
+}
+
+@keyframes shoot{
+0%{transform:translate(0,0);}
+100%{transform:translate(400px,400px);opacity:0;}
+}
+
 .fire{
 position:fixed;
 font-size:30px;
@@ -108,6 +114,7 @@ animation:boom 2s linear forwards;
 .big{
 font-size:70px;
 margin-top:30vh;
+font-family:'Orbitron',sans-serif;
 }
 
 </style>
@@ -115,23 +122,34 @@ margin-top:30vh;
 
 <body>
 
-<div id="main">
-
 <h1>I LOVE YOU TANVI ❤️</h1>
 
 <p><b>
-Tanvi, shayad tumhe yaad ho ya na ho par mere liye sab kuch us din se special ho gaya tha jab main tumse pehli baar Rustampur ke us coaching institute me mila tha jaha Sonu sir padhaate the 2024 me. Us din mujhe bilkul bhi idea nahi tha ki ek simple si class meri life ki sabse beautiful memory ban jayegi. Jab bhi tum class me aati thi na pata nahi kyun pura din automatically better lagne lagta tha. Tumhari smile aur tumhari simple si baatein mujhe andar se itna khush kar deti thi ki main explain bhi nahi kar sakta. Shayad main kabhi properly bol nahi paaya, par sach ye hai ki tum meri life ki sabse special person ban chuki ho.
+Tanvi, shayad tumhe yaad ho ya na ho par mere liye sab kuch us din se special ho gaya tha jab main tumse pehli baar Rustampur ke us coaching institute me mila tha jaha Sonu sir padhaate the 2024 me. Jab bhi tum class me aati thi na pura din automatically better lagne lagta tha. Tumhari smile aur tumhari baatein meri life ki sabse beautiful feeling ban chuki hain. Dil se bas ek hi baat kehna chahta hu… tum meri life ki sabse special person ho.
 </b></p>
 
 <h2 class="ring">💍</h2>
+
 <h2>Will you marry me Tanvi?</h2>
 
 <button class="yes" onclick="yes()">Yes ❤️</button>
 <button class="no" onmouseover="move()">No 😅</button>
 
-</div>
-
 <script>
+
+const colors=[
+"#ff4e8a","#ff0080","#ff5733","#ffbd69","#ff33cc",
+"#ff0066","#ff9966","#ff6699","#ff3399","#ffcc66",
+"#ff6666","#ff0099","#ff6600","#ff3366","#ffcc99",
+"#ff0066","#ff99cc","#ff6699","#ff9966","#ff3300"
+];
+
+let i=0;
+
+setInterval(()=>{
+document.body.style.background=colors[i];
+i=(i+1)%colors.length;
+},2000);
 
 function move(){
 let btn=document.querySelector(".no");
@@ -142,9 +160,9 @@ btn.style.top=Math.random()*80+"%";
 
 function yes(){
 
-document.body.innerHTML="<h1 class='big'>SHE SAID YES! 💍❤️</h1>";
+document.body.innerHTML="<h1 class='big'>THANK YOU TANVI ❤️</h1>";
 
-for(let i=0;i<100;i++){
+for(let i=0;i<120;i++){
 let heart=document.createElement("div");
 heart.innerHTML="💖";
 heart.style.position="fixed";
