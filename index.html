@@ -9,16 +9,13 @@
 body{
 margin:0;
 font-family:Arial;
-background:linear-gradient(135deg,#ff4e8a,#ff8fab);
 text-align:center;
 color:white;
-overflow-x:hidden;
+overflow:hidden;
+background:radial-gradient(circle,#0f2027,#203a43,#2c5364);
 }
 
-h1{
-font-size:55px;
-margin-top:30px;
-}
+h1{font-size:55px;margin-top:30px;}
 
 p{
 width:85%;
@@ -37,32 +34,80 @@ margin:10px;
 cursor:pointer;
 }
 
-.yes{
-background:#00ff88;
-color:black;
+.yes{background:#00ff88;color:black;}
+.no{background:#ff4444;color:white;position:relative;}
+
+.ring{
+font-size:90px;
+animation:ring 2s infinite;
 }
 
-.no{
-background:#ff4444;
+@keyframes ring{
+0%{transform:rotate(-10deg);}
+50%{transform:rotate(10deg);}
+100%{transform:rotate(-10deg);}
+}
+
+.star{
+position:fixed;
 color:white;
-position:relative;
+font-size:14px;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:0.3;}
+to{opacity:1;}
+}
+
+.shoot{
+position:fixed;
+font-size:18px;
+animation:shoot 2s linear forwards;
+}
+
+@keyframes shoot{
+0%{transform:translate(0,0);}
+100%{transform:translate(400px,400px);opacity:0;}
 }
 
 .heart{
 position:fixed;
-bottom:-20px;
+top:-10px;
 font-size:22px;
-animation:float 6s linear infinite;
+animation:fall 6s linear infinite;
 }
 
-@keyframes float{
-0%{transform:translateY(0);opacity:1;}
-100%{transform:translateY(-120vh);opacity:0;}
+@keyframes fall{
+0%{transform:translateY(-10vh);}
+100%{transform:translateY(110vh);}
+}
+
+.rose{
+position:fixed;
+font-size:24px;
+animation:rose 7s linear infinite;
+}
+
+@keyframes rose{
+0%{transform:translateY(-10vh) rotate(0deg);}
+100%{transform:translateY(110vh) rotate(360deg);}
+}
+
+.fire{
+position:fixed;
+font-size:30px;
+animation:boom 2s linear forwards;
+}
+
+@keyframes boom{
+0%{transform:scale(0);}
+100%{transform:scale(2);opacity:0;}
 }
 
 .big{
-font-size:65px;
-margin-top:35vh;
+font-size:70px;
+margin-top:30vh;
 }
 
 </style>
@@ -70,21 +115,16 @@ margin-top:35vh;
 
 <body>
 
-<audio autoplay loop>
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9a6e0c.mp3?filename=romantic-love-ambient-11095.mp3" type="audio/mpeg">
-</audio>
-
 <div id="main">
 
 <h1>I LOVE YOU TANVI ❤️</h1>
 
-<p>
-<b>
-Tanvi, shayad tumhe yaad ho ya na ho, par mere liye sab kuch us din se special ho gaya tha jab main tumse pehli baar Rustampur ke us coaching institute me mila tha jaha Sonu sir padhaate the, saal 2024 me. Us din mujhe bilkul bhi idea nahi tha ki ek simple si class meri life ki sabse beautiful memory ban jayegi. Jab bhi tum class me aati thi na, pata nahi kyun pura din automatically better lagne lagta tha. Tumhari smile, tumhari baatein aur tumhara simple sa attitude mujhe andar se itna khush kar deta tha ki main explain bhi nahi kar sakta. Shayad ye sab feelings main kabhi properly bol nahi paaya, par sach ye hai ki tum meri life ki sabse special person ban chuki ho. Aaj bas dil se ek hi baat kehna chahta hu… I truly love you Tanvi.
-</b>
-</p>
+<p><b>
+Tanvi, shayad tumhe yaad ho ya na ho par mere liye sab kuch us din se special ho gaya tha jab main tumse pehli baar Rustampur ke us coaching institute me mila tha jaha Sonu sir padhaate the 2024 me. Us din mujhe bilkul bhi idea nahi tha ki ek simple si class meri life ki sabse beautiful memory ban jayegi. Jab bhi tum class me aati thi na pata nahi kyun pura din automatically better lagne lagta tha. Tumhari smile aur tumhari simple si baatein mujhe andar se itna khush kar deti thi ki main explain bhi nahi kar sakta. Shayad main kabhi properly bol nahi paaya, par sach ye hai ki tum meri life ki sabse special person ban chuki ho.
+</b></p>
 
-<h2>Will you marry me Tanvi? 💍</h2>
+<h2 class="ring">💍</h2>
+<h2>Will you marry me Tanvi?</h2>
 
 <button class="yes" onclick="yes()">Yes ❤️</button>
 <button class="no" onmouseover="move()">No 😅</button>
@@ -102,7 +142,26 @@ btn.style.top=Math.random()*80+"%";
 
 function yes(){
 
-document.body.innerHTML="<h1 class='big'>THANK YOU TANVI ❤️</h1>";
+document.body.innerHTML="<h1 class='big'>SHE SAID YES! 💍❤️</h1>";
+
+for(let i=0;i<100;i++){
+let heart=document.createElement("div");
+heart.innerHTML="💖";
+heart.style.position="fixed";
+heart.style.left=Math.random()*100+"%";
+heart.style.top=Math.random()*100+"%";
+heart.style.fontSize="30px";
+document.body.appendChild(heart);
+}
+
+for(let i=0;i<60;i++){
+let fire=document.createElement("div");
+fire.className="fire";
+fire.innerHTML="🎆";
+fire.style.left=Math.random()*100+"%";
+fire.style.top=Math.random()*100+"%";
+document.body.appendChild(fire);
+}
 
 }
 
@@ -111,12 +170,37 @@ let heart=document.createElement("div");
 heart.className="heart";
 heart.innerHTML="❤️";
 heart.style.left=Math.random()*100+"%";
-heart.style.fontSize=(20+Math.random()*20)+"px";
 document.body.appendChild(heart);
-
 setTimeout(()=>heart.remove(),6000);
-
 },300);
+
+setInterval(()=>{
+let rose=document.createElement("div");
+rose.className="rose";
+rose.innerHTML="🌹";
+rose.style.left=Math.random()*100+"%";
+document.body.appendChild(rose);
+setTimeout(()=>rose.remove(),7000);
+},800);
+
+setInterval(()=>{
+let star=document.createElement("div");
+star.className="star";
+star.innerHTML="⭐";
+star.style.left=Math.random()*100+"%";
+star.style.top=Math.random()*100+"%";
+document.body.appendChild(star);
+},500);
+
+setInterval(()=>{
+let shoot=document.createElement("div");
+shoot.className="shoot";
+shoot.innerHTML="🌠";
+shoot.style.left=Math.random()*100+"%";
+shoot.style.top=Math.random()*50+"%";
+document.body.appendChild(shoot);
+setTimeout(()=>shoot.remove(),2000);
+},4000);
 
 </script>
 
